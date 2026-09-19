@@ -194,7 +194,6 @@ int usb_dfu_find(libusb_device_handle **handle, uint8_t *iserial_out)
             }
             /* The caller (checkm8_exploit / usb_dfu_find retry) will call
              * usb_dfu_find again after returning error. */
-            libusb_free_device_list(devs, 1);
             return -1;
         }
         if (ret != LIBUSB_SUCCESS)
